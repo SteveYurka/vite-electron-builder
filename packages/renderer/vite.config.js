@@ -4,8 +4,8 @@ import {chrome} from '../../electron-vendors.config.json';
 import {join} from 'path';
 import { builtinModules } from 'module';
 import {defineConfig} from 'vite';
-import vue from '@vitejs/plugin-vue';
 import {loadAndSetEnv} from '../../scripts/loadAndSetEnv.mjs';
+import reactRefresh from '@vitejs/plugin-react-refresh';
 
 
 const PACKAGE_ROOT = __dirname;
@@ -27,7 +27,7 @@ export default defineConfig({
       '/@/': join(PACKAGE_ROOT, 'src') + '/',
     },
   },
-  plugins: [vue()],
+  plugins: [reactRefresh()],
   base: '',
   server: {
     fsServe: {
